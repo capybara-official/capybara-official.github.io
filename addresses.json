@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "updated_at": "2026-10-28",
+  "title": "Capybara 永久地址",
+  "notice": "请收藏 bmb.news。官网、订阅域名被屏蔽时，这里会列出当前可用的入口。",
+  "sites": [
+    {
+      "label": "官网（主）",
+      "url": "https://www.kapi-net.com/"
+    },
+    {
+      "label": "官网备用 1",
+      "url": "https://w2.kapi-net.com/"
+    },
+    {
+      "label": "官网备用 2",
+      "url": "https://w3.kapi-net.com/"
+    },
+    {
+      "label": "官网备用 3",
+      "url": "https://w4.kapi-net.com/"
+    },
+    {
+      "label": "官网备用 4",
+      "url": "https://w5.kapi-net.com/"
+    }
+  ],
+  "subscription_hosts": [
+    "cp1.pacy.cc",
+    "s2.pacy.cc",
+    "s3.pacy.cc",
+    "s4.pacy.cc",
+    "s5.pacy.cc"
+  ],
+  "subscription_help": "把订阅链接里的域名换成任意一个，其余不变；Capybara 客户端会自动处理。",
+  "contacts": [
+    {
+      "label": "Telegram 通知频道",
+      "url": "https://t.me/capybaranotice"
+    },
+    {
+      "label": "Telegram 交流群",
+      "url": "https://t.me/capybarapublic"
+    },
+    {
+      "label": "邮箱",
+      "url": "mailto:official_capybara@proton.me",
+      "text": "official_capybara@proton.me"
+    }
+  ],
+  "mirrors": [
+    {
+      "label": "永久地址",
+      "url": "https://bmb.news/"
+    },
+    {
+      "label": "永久地址（备用，GitHub）",
+      "url": "https://capybara-official.github.io/"
+    }
+  ]
+}
