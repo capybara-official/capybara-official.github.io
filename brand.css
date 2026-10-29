@@ -438,7 +438,8 @@ footer {
 .light.ok { background: var(--ok); box-shadow: 0 0 0 3px rgba(47, 158, 91, 0.16); }
 .light.degraded { background: var(--warn); box-shadow: 0 0 0 3px rgba(201, 130, 0, 0.16); }
 .light.down { background: var(--bad); box-shadow: 0 0 0 3px rgba(209, 75, 63, 0.16); }
-.light.unknown { background: var(--unknown); }
+.light.unknown,
+.light.maintenance { background: var(--unknown); }
 
 .meta { color: var(--muted); font-size: 12px; font-weight: 600; }
 
