@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updated_at": "2026-10-28",
+  "updated_at": "2026-10-29",
   "title": "Capybara 永久地址",
-  "notice": "请收藏 bmb.news。官网、订阅域名被屏蔽时，这里会列出当前可用的入口。",
+  "notice": "请收藏 bmb.news。官网被屏蔽时，这里会列出当前可用的入口。",
   "sites": [
     {
       "label": "官网（主）",
@@ -25,14 +25,7 @@
       "url": "https://w5.kapi-net.com/"
     }
   ],
-  "subscription_hosts": [
-    "cp1.pacy.cc",
-    "s2.pacy.cc",
-    "s3.pacy.cc",
-    "s4.pacy.cc",
-    "s5.pacy.cc"
-  ],
-  "subscription_help": "把订阅链接里的域名换成任意一个，其余不变；Capybara 客户端会自动处理。",
+  "subscription_help": "更新到最新版官方客户端会自动切换线路；用其他客户端的，登录官网点「一键导入」重新导入即可。",
   "contacts": [
     {
       "label": "Telegram 通知频道",
