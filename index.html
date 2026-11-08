@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png?v=capybara-favicon-20260627a">
   <link rel="icon" href="favicon.ico?v=capybara-favicon-20260627a" sizes="any">
   <link rel="icon" type="image/png" href="favicon.png?v=capybara-favicon-20260627a">
-  <link rel="stylesheet" href="/brand.css?v=20261028">
+  <link rel="stylesheet" href="/brand.css?v=20261108">
 </head>
 <body>
   <main>
@@ -24,6 +24,10 @@
         <a class="header-link" href="https://bmb.news/status" data-status-link><span class="dot"></span>服务状态</a>
       </nav>
     </header>
+
+    <aside class="promo-banner" data-promo-banner role="note" aria-label="双11 活动">
+      <p>双11 限时：季付 / 年付 8 折（码 CAPY1111），入门月包首月 ¥4.9（码 CAPYNEW49），11.8–11.12</p>
+    </aside>
 
     <section class="hero">
       <div class="panel intro">
@@ -110,6 +114,14 @@
       <span>套餐、线路、活动和推广返利都可以直接问我们。</span>
     </a>
   </div>
+
+  <script>
+    // 双11 banner: gone from 2026-11-13 00:00 Beijing time (2026-11-12 16:00 UTC), without a redeploy.
+    (function () {
+      var banner = document.querySelector('[data-promo-banner]');
+      if (banner && Date.now() >= Date.UTC(2026, 10, 12, 16, 0, 0)) banner.remove();
+    })();
+  </script>
 
   <script>
     // address:entries:begin

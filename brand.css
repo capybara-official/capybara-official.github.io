@@ -548,3 +548,18 @@ footer {
 }
 
 .status-section > .meta { display: block; margin-top: 10px; }
+
+/* 双11 banner (auto-removed by a script in index.html after 2026-11-13 00:00 Beijing time) */
+.promo-banner {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--ink);
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.promo-banner p { margin: 0; }
