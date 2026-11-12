@@ -544,7 +544,12 @@ footer {
   .manual-grid { grid-template-columns: 1fr; }
   .promo-actions { display: grid; }
   .promo-action { width: 100%; }
-  .support-dock { right: 10px; bottom: 82px; width: min(300px, calc(100vw - 20px)); }
+  /* Phones: a small pill above the Chatwoot bubble instead of a near full-width card, so it
+     never sits over the full-width entry buttons; extra bottom room lets the last row scroll clear. */
+  main { padding-bottom: 140px; }
+  .support-dock { right: 12px; bottom: calc(84px + env(safe-area-inset-bottom)); width: auto; }
+  .support-button { padding: 9px 14px; border-radius: 999px; }
+  .support-button span { display: none; }
 }
 
 .status-section > .meta { display: block; margin-top: 10px; }

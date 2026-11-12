@@ -8,7 +8,7 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png?v=capybara-favicon-20260627a">
   <link rel="icon" href="favicon.ico?v=capybara-favicon-20260627a" sizes="any">
   <link rel="icon" type="image/png" href="favicon.png?v=capybara-favicon-20260627a">
-  <link rel="stylesheet" href="/brand.css?v=20261108">
+  <link rel="stylesheet" href="/brand.css?v=20261112">
 </head>
 <body>
   <main>
@@ -20,19 +20,12 @@
           <small>入口导航</small>
         </span>
       </a>
-      <nav class="header-actions" aria-label="页面导航">
-        <a class="header-link" href="https://bmb.news/status" data-status-link><span class="dot"></span>服务状态</a>
-      </nav>
     </header>
-
-    <aside class="promo-banner" data-promo-banner role="note" aria-label="双11 活动">
-      <p>双11 限时：季付 / 年付 8 折（码 CAPY1111），入门月包首月 ¥4.9（码 CAPYNEW49），11.8–11.12</p>
-    </aside>
 
     <section class="hero">
       <div class="panel intro">
         <h1>选择更快入口进入 <span class="accent">Capybara</span>。</h1>
-        <p>点击后会自动检测多个可用地址，并打开当前响应更快的 Capybara 首页。进入后即可登录、注册、购买套餐或下载客户端。</p>
+        <p>点击后会自动检测多个可用地址，并打开当前响应更快的 Capybara 官网。</p>
         <a class="primary-action" href="https://www.kapi-net.com/" data-start-speed-test>立即测速进入</a>
       </div>
 
@@ -44,34 +37,6 @@
         <div class="progress-track" aria-label="入口检测进度"><span data-progress-bar></span></div>
         <div class="probe-list" data-probe-list></div>
       </aside>
-    </section>
-
-    <section class="promo-section" aria-label="Capybara 活动与服务优势">
-      <div class="promo-grid">
-        <article class="promo-card">
-          <h2>💰 邀请返佣</h2>
-          <p class="promo-highlight">好友首单返佣 25%</p>
-          <p>登录官网在「邀请」里复制邀请码分享给好友，好友首单付款后返佣自动到账。有社群或频道的长期合作，可以咨询客服。</p>
-          <div class="promo-actions">
-            <a class="promo-action" href="https://t.me/capybarapublic" target="_blank" rel="noopener noreferrer">咨询 TG 客服</a>
-          </div>
-        </article>
-
-        <article class="promo-card">
-          <h2>💎 本站优势</h2>
-          <ul class="promo-list">
-            <li>多线路多协议，线路出问题时客户端自动切换。</li>
-            <li>各类套餐灵活选择，总有一款适合你的需求。</li>
-            <li>多种高级中转线路，支持常用流媒体解锁。</li>
-            <li>客服响应及时，也愿意认真接纳用户反馈。</li>
-          </ul>
-        </article>
-
-        <article class="promo-card">
-          <h2>🛍 当前活动</h2>
-          <p>套餐优惠、推广合作和临时活动会不定期更新。想了解当前最合适的方案，可以直接联系 TG 客服，或打开右下角在线客服。</p>
-        </article>
-      </div>
     </section>
 
     <!-- address:sections:begin -->
@@ -90,7 +55,7 @@
 
     <section class="panel manual-panel" aria-label="连不上">
       <h2>连不上？</h2>
-      <p>更新到最新版官方客户端会自动切换线路；用其他客户端的，登录官网点「一键导入」重新导入即可。</p>
+      <p>更新到最新版官方客户端会自动切换；用其他客户端的，登录官网点「一键导入」重新导入即可。</p>
     </section>
 
     <section class="panel manual-panel" aria-label="联系我们">
@@ -102,8 +67,16 @@
       </div>
     </section>
 
+    <section class="panel manual-panel" aria-label="其他发布页">
+      <h2>其他发布页</h2>
+      <p>以下页面和本页同步更新，建议一起收藏。</p>
+      <div class="manual-grid">
+        <a class="manual-link has-sub" href="https://bmb.news/" target="_blank" rel="noreferrer">永久地址<small class="manual-sub" translate="no">bmb.news</small></a>
+      </div>
+    </section>
+
     <footer>
-      更新于 2026-11-05。建议收藏本页；入口不可用时，我们会在这里更新可用地址。
+      更新于 2026-11-12。建议收藏本页；入口不可用时，我们会在这里更新可用地址。
     </footer>
     <!-- address:sections:end -->
   </main>
@@ -111,17 +84,9 @@
   <div class="support-dock" data-support-dock>
     <a class="support-button" href="https://t.me/capybarapublic" target="_blank" rel="noreferrer">
       <strong>Capybara 在线客服</strong>
-      <span>套餐、线路、活动和推广返利都可以直接问我们。</span>
+      <span>有问题可以直接问我们。</span>
     </a>
   </div>
-
-  <script>
-    // 双11 banner: gone from 2026-11-13 00:00 Beijing time (2026-11-12 16:00 UTC), without a redeploy.
-    (function () {
-      var banner = document.querySelector('[data-promo-banner]');
-      if (banner && Date.now() >= Date.UTC(2026, 10, 12, 16, 0, 0)) banner.remove();
-    })();
-  </script>
 
   <script>
     // address:entries:begin

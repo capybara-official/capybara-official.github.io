@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-11-05",
+  "updated_at": "2026-11-12",
   "title": "Capybara 永久地址",
   "notice": "请收藏 bmb.news。官网被屏蔽时，这里会列出当前可用的入口。",
   "sites": [
@@ -29,7 +29,7 @@
       "url": "https://web.kpbw.net/"
     }
   ],
-  "subscription_help": "更新到最新版官方客户端会自动切换线路；用其他客户端的，登录官网点「一键导入」重新导入即可。",
+  "subscription_help": "更新到最新版官方客户端会自动切换；用其他客户端的，登录官网点「一键导入」重新导入即可。",
   "contacts": [
     {
       "label": "Telegram 通知频道",
