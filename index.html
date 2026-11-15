@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>Capybara 导航 | 永久地址</title>
-  <link rel="apple-touch-icon" href="icons/Icon-192.png?v=capybara-favicon-20260627a">
-  <link rel="icon" href="favicon.ico?v=capybara-favicon-20260627a" sizes="any">
-  <link rel="icon" type="image/png" href="favicon.png?v=capybara-favicon-20260627a">
-  <link rel="stylesheet" href="/brand.css?v=20261113">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png?v=20261115">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=20261115">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=20261115">
+  <link rel="stylesheet" href="/brand.css?v=20261115">
 </head>
 <body>
   <main>
@@ -24,7 +24,7 @@
 
     <section class="hero">
       <div class="panel intro">
-        <h1>选择更快入口进入 <span class="accent">Capybara</span>。</h1>
+        <h1>选择更快入口进入 <span class="accent">Capybara</span></h1>
         <p>点击后会自动检测多个可用地址，并打开当前响应更快的 Capybara 官网。</p>
         <a class="primary-action" href="https://www.kapi-net.com/" data-start-speed-test>立即测速进入</a>
       </div>
@@ -32,7 +32,7 @@
       <aside class="panel probe-panel" aria-live="polite">
         <div class="progress-head">
           <h2 data-status-title>准备检测入口</h2>
-          <span class="progress-count" data-status-count>0/5</span>
+          <span class="progress-count" data-status-count></span>
         </div>
         <div class="progress-track" aria-label="入口检测进度"><span data-progress-bar></span></div>
         <div class="probe-list" data-probe-list></div>
@@ -80,13 +80,6 @@
     </footer>
     <!-- address:sections:end -->
   </main>
-
-  <div class="support-dock" data-support-dock>
-    <a class="support-button" href="https://t.me/capybarapublic" target="_blank" rel="noreferrer">
-      <strong>Capybara 在线客服</strong>
-      <span>有问题可以直接问我们。</span>
-    </a>
-  </div>
 
   <script>
     // address:entries:begin
@@ -206,6 +199,7 @@
     }
 
     renderRows();
+    if (statusCount) statusCount.textContent = `0/${entryCandidates.length}`;
     if (startButton) {
       startButton.addEventListener('click', runSpeedTest);
     }
