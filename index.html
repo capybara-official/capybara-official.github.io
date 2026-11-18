@@ -2,203 +2,79 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
   <meta name="robots" content="noindex, nofollow">
-  <title>Capybara 导航 | 永久地址</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png?v=20261115">
-  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png?v=20261115">
-  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=20261115">
-  <link rel="stylesheet" href="/brand.css?v=20261115">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; img-src 'self'; connect-src 'self' https:; base-uri 'none'; form-action 'none'">
+  <title>Capybara</title>
+  <link rel="icon" href="favicon.ico">
+  <style>
+    :root {
+      --bg-light: #f7f8f3; --bg-dark: #14130f;
+      --text-light: #242018; --text-dark: #efeadf;
+      --muted-light: #6d6759; --muted-dark: #a59f90;
+      --button-light: #f3b52b; --button-dark: #f3b52b;
+      --button-text-light: #17130a; --button-text-dark: #17130a;
+      --track-light: #e6e1d3; --track-dark: #34312a;
+      --bg: var(--bg-light); --text: var(--text-light); --muted: var(--muted-light);
+      --button: var(--button-light); --button-text: var(--button-text-light); --track: var(--track-light);
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: var(--bg-dark); --text: var(--text-dark); --muted: var(--muted-dark); --track: var(--track-dark); }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 17px/1.6 "Avenir Next", Avenir, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      display: grid; place-items: center; padding: 24px 16px max(24px, env(safe-area-inset-bottom));
+    }
+    main { width: 100%; max-width: 360px; text-align: center; }
+    h1 { font-size: 30px; letter-spacing: 0.02em; margin: 0 0 40px; font-weight: 700; }
+    .entry { display: grid; justify-items: center; gap: 20px; min-height: 148px; }
+    .message { margin: 0; color: var(--muted); }
+    .entry:not([data-state="testing"]) .message { color: var(--text); }
+    .note { margin: -12px 0 0; color: var(--muted); font-size: 15px; }
+    .go, .retry {
+      display: flex; align-items: center; justify-content: center; width: 100%; min-height: 54px;
+      padding: 0 20px; border: 0; border-radius: 14px; line-height: 1;
+      font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+      background: var(--button); color: var(--button-text);
+    }
+    .retry { background: transparent; color: var(--text); box-shadow: inset 0 0 0 1.5px var(--track); }
+    .go:focus-visible, .retry:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+    [hidden] { display: none !important; }
+
+    progress.spinner {
+      --size: 40px; --thickness: 3px; --spin: 1.2s;
+      width: var(--size); height: var(--size); border-radius: 50%; appearance: none; -webkit-appearance: none;
+      border: 0; background: conic-gradient(var(--button) 0 25%, transparent 0) var(--track);
+      -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--thickness)), #000 calc(100% - var(--thickness)));
+      mask: radial-gradient(farthest-side, transparent calc(100% - var(--thickness)), #000 calc(100% - var(--thickness)));
+      animation: spin var(--spin) linear infinite;
+    }
+    progress.spinner::-webkit-progress-bar, progress.spinner::-webkit-progress-value { background: none; display: none; }
+    progress.spinner::-moz-progress-bar { background: none; display: none; }
+    .entry:not([data-state="testing"]) progress.spinner { display: none; }
+    @keyframes spin { to { transform: rotate(1turn); } }
+    @media (prefers-reduced-motion: reduce) { progress.spinner { --spin: 6s; } }
+    @media (forced-colors: active) { progress.spinner { forced-color-adjust: none; background: conic-gradient(CanvasText 0 25%, Canvas 0); } }
+  </style>
 </head>
 <body>
   <main>
-    <header class="brand-bar">
-      <a class="brand" href="/" aria-label="Capybara 导航页">
-        <img class="brand-logo" src="/assets/capybara-box-logo.png" alt="" aria-hidden="true">
-        <span>
-          <strong>Capybara</strong>
-          <small>入口导航</small>
-        </span>
-      </a>
-    </header>
-
-    <section class="hero">
-      <div class="panel intro">
-        <h1>选择更快入口进入 <span class="accent">Capybara</span></h1>
-        <p>点击后会自动检测多个可用地址，并打开当前响应更快的 Capybara 官网。</p>
-        <a class="primary-action" href="https://www.kapi-net.com/" data-start-speed-test>立即测速进入</a>
-      </div>
-
-      <aside class="panel probe-panel" aria-live="polite">
-        <div class="progress-head">
-          <h2 data-status-title>准备检测入口</h2>
-          <span class="progress-count" data-status-count></span>
-        </div>
-        <div class="progress-track" aria-label="入口检测进度"><span data-progress-bar></span></div>
-        <div class="probe-list" data-probe-list></div>
-      </aside>
+    <h1>Capybara</h1>
+    <section class="entry" data-entry data-state="testing" aria-live="polite">
+      <progress class="spinner" aria-label="正在寻找"></progress>
+      <p class="message" data-message>正在找能打开的入口…</p>
+      <p class="note" data-note hidden>打开 App 直接用，或稍后再试</p>
+      <a class="go" data-go href="#" rel="noreferrer" hidden>进入</a>
+      <button class="retry" data-retry type="button" hidden>再试一次</button>
     </section>
-
-    <!-- address:sections:begin -->
-    <section class="panel manual-panel" aria-label="手动备用入口">
-      <h2>手动备用入口</h2>
-      <p>如果自动测速没有跳转，可以任选一个备用入口打开 Capybara 首页。</p>
-      <div class="manual-grid">
-        <a class="manual-link" href="https://www.kapi-net.com/">主入口</a>
-        <a class="manual-link" href="https://w3.kapi-net.com/">备用 A</a>
-        <a class="manual-link" href="https://w4.kapi-net.com/">备用 B</a>
-        <a class="manual-link" href="https://web.kpbw.net/">备用 C</a>
-      </div>
-    </section>
-
-    <section class="panel manual-panel" aria-label="连不上">
-      <h2>连不上？</h2>
-      <p>更新到最新版官方客户端会自动切换；用其他客户端的，登录官网点「一键导入」重新导入即可。</p>
-    </section>
-
-    <section class="panel manual-panel" aria-label="联系我们">
-      <h2>联系我们</h2>
-      <div class="manual-grid">
-        <a class="manual-link" href="https://t.me/capybaranotice" target="_blank" rel="noreferrer">Telegram 通知频道</a>
-        <a class="manual-link" href="https://t.me/capybarapublic" target="_blank" rel="noreferrer">Telegram 交流群</a>
-        <a class="manual-link has-sub" href="mailto:official_capybara@proton.me" target="_blank" rel="noreferrer">官方邮箱<small class="manual-sub" translate="no">official_capybara@proton.me</small></a>
-      </div>
-    </section>
-
-    <section class="panel manual-panel" aria-label="其他发布页">
-      <h2>其他发布页</h2>
-      <p>以下页面和本页同步更新，建议一起收藏。</p>
-      <div class="manual-grid">
-        <a class="manual-link has-sub" href="https://bmb.news/" target="_blank" rel="noreferrer">永久地址<small class="manual-sub" translate="no">bmb.news</small></a>
-      </div>
-    </section>
-
-    <footer>
-      更新于 2026-11-18。建议收藏本页；入口不可用时，我们会在这里更新可用地址。
-    </footer>
-    <!-- address:sections:end -->
+    <noscript><p class="message">这个页面需要开启脚本。</p></noscript>
   </main>
-
-  <script>
-    // address:entries:begin
-    const entryCandidates = [
-      { label: '主入口', origin: 'https://www.kapi-net.com', fallbackPath: 'https://www.kapi-net.com/' },
-      { label: '备用 A', origin: 'https://w3.kapi-net.com', fallbackPath: 'https://w3.kapi-net.com/' },
-      { label: '备用 B', origin: 'https://w4.kapi-net.com', fallbackPath: 'https://w4.kapi-net.com/' },
-      { label: '备用 C', origin: 'https://web.kpbw.net', fallbackPath: 'https://web.kpbw.net/' },
-    ];
-    // address:entries:end
-
-    const probeTimeoutMs = 3000;
-    const redirectDelayMs = 260;
-    const holdRedirect = new URLSearchParams(window.location.search).has('debug');
-
-    const startButton = document.querySelector('[data-start-speed-test]');
-    const statusTitle = document.querySelector('[data-status-title]');
-    const statusCount = document.querySelector('[data-status-count]');
-    const progressBar = document.querySelector('[data-progress-bar]');
-    const probeList = document.querySelector('[data-probe-list]');
-
-    function setProgress(value) {
-      if (!progressBar) return;
-      progressBar.style.width = `${Math.max(0, Math.min(100, Math.round(value)))}%`;
-    }
-
-    function renderRows() {
-      const rows = new Map();
-      if (!probeList) return rows;
-      probeList.replaceChildren();
-      for (const candidate of entryCandidates) {
-        const row = document.createElement('div');
-        row.className = 'probe-row';
-        row.innerHTML = `<strong>${candidate.label}</strong><span>待检测</span>`;
-        probeList.append(row);
-        rows.set(candidate.origin, row);
-      }
-      return rows;
-    }
-
-    function updateRow(rows, candidate, state, text) {
-      const row = rows.get(candidate.origin);
-      if (!row) return;
-      row.classList.remove('is-testing', 'is-ok', 'is-fail');
-      row.classList.add(`is-${state}`);
-      const value = row.querySelector('span');
-      if (value) value.textContent = text;
-    }
-
-    async function probe(candidate, rows) {
-      updateRow(rows, candidate, 'testing', '检测中');
-      const started = performance.now();
-      const controller = new AbortController();
-      const timeout = window.setTimeout(() => controller.abort(), probeTimeoutMs);
-      try {
-        const nonce = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-        const response = await fetch(`${candidate.origin}/_entry-check?nav=${nonce}`, {
-          cache: 'no-store',
-          credentials: 'omit',
-          signal: controller.signal,
-        });
-        if (!response.ok) {
-          throw new Error(`entry check failed: ${response.status}`);
-        }
-        const body = (await response.text()).trim();
-        if (body !== 'ok') {
-          throw new Error('entry check returned unexpected body');
-        }
-        const duration = Math.max(1, Math.round(performance.now() - started));
-        updateRow(rows, candidate, 'ok', `${duration}ms`);
-        return { ...candidate, ok: true, duration };
-      } catch (_) {
-        updateRow(rows, candidate, 'fail', '不可达');
-        return { ...candidate, ok: false, duration: Number.POSITIVE_INFINITY };
-      } finally {
-        window.clearTimeout(timeout);
-      }
-    }
-
-    async function runSpeedTest(event) {
-      event.preventDefault();
-      const rows = renderRows();
-      const results = [];
-      let completed = 0;
-      if (statusTitle) statusTitle.textContent = '正在检测入口';
-      if (statusCount) statusCount.textContent = `0/${entryCandidates.length}`;
-      setProgress(6);
-
-      await Promise.all(entryCandidates.map(async (candidate) => {
-        const result = await probe(candidate, rows);
-        results.push(result);
-        completed += 1;
-        if (statusCount) statusCount.textContent = `${completed}/${entryCandidates.length}`;
-        setProgress(8 + (completed / entryCandidates.length) * 82);
-      }));
-
-      const winner = results
-        .filter((result) => result.ok)
-        .sort((a, b) => a.duration - b.duration)[0] || entryCandidates[0];
-      const target = winner.ok ? `${winner.origin}/` : winner.fallbackPath;
-
-      setProgress(100);
-      if (statusTitle) {
-        statusTitle.textContent = winner.ok ? `已选择${winner.label}` : '使用主入口';
-      }
-      if (statusCount) {
-        statusCount.textContent = winner.ok ? `${winner.duration}ms` : 'fallback';
-      }
-
-      if (!holdRedirect) {
-        window.setTimeout(() => {
-          window.location.assign(target);
-        }, redirectDelayMs);
-      }
-    }
-
-    renderRows();
-    if (statusCount) statusCount.textContent = `0/${entryCandidates.length}`;
-    if (startButton) {
-      startButton.addEventListener('click', runSpeedTest);
-    }
-  </script>
+  <script src="entry.js" defer></script>
 </body>
 </html>
