@@ -2,7 +2,7 @@
   "version": 1,
   "updated_at": "2026-11-18",
   "title": "Capybara 永久地址",
-  "notice": "请收藏 bmb.news。官网被屏蔽时，这里会列出当前可用的入口。",
+  "notice": "官网打不开就打开 App 直接用。",
   "sites": [
     {
       "label": "官网（主）",
@@ -39,11 +39,11 @@
   ],
   "mirrors": [
     {
-      "label": "永久地址",
-      "url": "https://bmb.news/"
+      "label": "备用网址",
+      "url": "https://newpacy.cc/"
     },
     {
-      "label": "永久地址（备用，GitHub）",
+      "label": "备用网址（GitHub）",
       "url": "https://capybara-official.github.io/"
     }
   ]
